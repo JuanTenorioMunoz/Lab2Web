@@ -1,5 +1,6 @@
 import "./Options.css";
 import Option, { optionProps } from "../Option/Option";
+import { useState } from "react";
 
 type optionsProps = {
     options: { 
@@ -9,14 +10,18 @@ type optionsProps = {
 
 const Options = ({ options, page }: optionsProps) => {
 
+    const [selection, setSelect] = useState<number | null>(null);
     const currentPage = options[page]
 
     return (
-        <div className="optionContainer">
-            {currentPage.map((option) => (
+        <div className="optionsContainer">
+            {currentPage.map((option, index) => (
                 <Option
+                    key={index}
                     text={option.text}
                     image={option.image}
+                    isSelected={selection === index}
+                    onClick={() => {setSelect(index)}}
                 />
             ))}
         </div>

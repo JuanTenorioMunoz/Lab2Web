@@ -1,13 +1,16 @@
 import "./Button.css"
 
-type buttonProps = {
+type ButtonProps = {
     text: string;
+    onClick?: () => void; 
 }
 
-const Button = ({text}:buttonProps) => {
-    return(
-        <button className="button">{text}</button>
+const Button = ({ text, onClick }: ButtonProps) => {
+    return (
+        <button className="button" onClick={onClick}>
+            {text}
+        </button>
     )
 }
 
-export default Button
+export default Button;
