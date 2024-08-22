@@ -6,10 +6,10 @@ import Result from './components/Result/Result';
 import Landing from './components/Landing/Landing';
 
 function App() {
-  const [page, setPage] = useState(1)
   const [showLanding, displayLanding] = useState(true)
   const [showQuestions, displayQuestions] = useState(false)
   const [showResult, displayResult] = useState(false)
+  const [answers, updateAnswers] = useState<string[]>([]);
 
   const goToQuestions = () => {
     displayLanding(false);
@@ -29,10 +29,15 @@ function App() {
     displayQuestions(false);
   }
 
+  const storeAnswers = (answer: string) => {
+    updateAnswers((prevAnswers) => [...prevAnswers, answer]);
+    console.log(answers)
+  };
+
   return (
     <>
       {showLanding && <Landing buttonAction={goToQuestions} />}
-      {showQuestions && <QuestionArea optionsInfo={optionsInfo} />}
+      {showQuestions && <QuestionArea optionsInfo={optionsInfo} storeAnswers={storeAnswers} />}
       {showResult && <Result />}
     </>
   )

@@ -6,11 +6,12 @@ import Button from "../Button/Button";
 type questionProps = {
     question: string;
     optionsInfo: any; 
+    storeAnswers: (answer: string) => void;
 }
 
-const QuestionArea = ({question, optionsInfo}: questionProps) => {
+const QuestionArea = ({question, optionsInfo, storeAnswers}: questionProps) => {
     
-    const [answers, setAnswers] = useState("")
+    const [answers, setAnswers] = useState([])
     const [page, setPage] = useState(1);
 
     const incrementPage = () => {
@@ -23,11 +24,16 @@ const QuestionArea = ({question, optionsInfo}: questionProps) => {
     console.log(page)
     };
 
+    const giveAnswer = (answer: string) => {
+        storeAnswers(answer); 
+    };
+
+
   return (
     <>
         <article className="QuestionArea">
         <h1>{question}</h1>
-        <Options options={optionsInfo} page={page}></Options>
+        <Options options={optionsInfo} page={page} selectAnswer={giveAnswer}></Options>
         <Button text='Previous Page' onClick={decrementPage}></Button>
         <Button text='Next Page' onClick={incrementPage}></Button>
         </article>

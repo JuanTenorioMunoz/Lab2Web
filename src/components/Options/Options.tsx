@@ -11,26 +11,39 @@ export type optionsProps = {
         } 
     };
     page: number;
-    type: toggle;
+    selectAnswer: (selectedOption: optionProps) => void;
 };
 
-const Options = ({ options, page }: optionsProps) => {
+const Options = ({ options, page, selectAnswer }: optionsProps) => {
 
     const [selection, setSelect] = useState<number | null>(null);
-    
+
     const currentPage = options[page].options;
-    const question = options[page].question
+    const question = options[page].question;
+
+    const handleOptionClick = (option: optionProps, index: number) => {
+        setSelect(index);
+        switch (option.type) {
+            case 'toggle':
+                console.log("Text option selected:", option.text);
+                break;
+            default:
+                console.log("Unknown option type:", option.type);
+        }
+        selectAnswer(option);
+    };
 
     return (
         <div className="optionsContainer">
-        <h1>{question}</h1>
+            <h1>{question}</h1>
             {currentPage.map((option, index) => (
                 <Option
                     key={index}
+                    type={option.type}
                     text={option.text}
                     image={option.image}
                     isSelected={selection === index}
-                    onClick={() => {setSelect(index)}}
+                    onClick={() => handleOptionClick(option, index)}
                 />
             ))}
         </div>

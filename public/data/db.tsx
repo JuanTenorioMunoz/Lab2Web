@@ -10,7 +10,7 @@ export const optionsInfo = {
             {
                 text: "Joh",
                 image: "eberberber",
-                type: "toggle"
+                type: "normal",
             }
         ]
     },
