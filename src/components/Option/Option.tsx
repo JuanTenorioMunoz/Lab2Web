@@ -9,7 +9,7 @@ interface optionProps {
 
 const Option = ({text, image, onClick, isSelected}:optionProps) => {
     return (
-        <div className={'optionContainer' + isSelected} onClick={onClick}>
+        <div className={'optionContainer' + (isSelected ? ' selected' : '')} onClick={onClick}>
             <img className="optionImg" src={image}></img>
             <h1 className="optionText">{text}</h1>
         </div>

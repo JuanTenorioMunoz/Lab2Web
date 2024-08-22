@@ -2,16 +2,21 @@ import "./Options.css";
 import Option, { optionProps } from "../Option/Option";
 import { useState } from "react";
 
-type optionsProps = {
+export type optionsProps = {
     options: { 
-        [key: string]: optionProps[] };
+        [key: string]: { 
+            text: string; 
+            options: optionProps[]; 
+        } 
+    };
     page: number;
 };
 
 const Options = ({ options, page }: optionsProps) => {
 
     const [selection, setSelect] = useState<number | null>(null);
-    const currentPage = options[page]
+    
+    const currentPage = options[page].options;
 
     return (
         <div className="optionsContainer">

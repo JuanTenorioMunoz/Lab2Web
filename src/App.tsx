@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './components/Button/Button'
-import Options from './components/Options/Options'
 import { optionsInfo } from '../public/data/db'
+import QuestionArea from './components/QuestionArea/QuestionArea'
 
 function App() {
   const [page, setPage] = useState(1);
@@ -19,9 +18,7 @@ function App() {
 
   return (
     <>
-      <Options options={optionsInfo} page={page}></Options>
-      <Button text='Next Page' onClick={incrementPage}></Button>
-      <Button text='Previous Page' onClick={decrementPage}></Button>
+      <QuestionArea optionsInfo={optionsInfo}></QuestionArea>
     </>
   )
 }
