@@ -10,9 +10,9 @@ const Landing = ({buttonAction}: LandingProps) => {
 
     return (
         <article className="landing">
-            <h1>1</h1>
-            <h2>2</h2>
-            <input></input>
+            <h1>Don't know what to watch?</h1>
+            <h2>Begin the survey to find a movie!</h2>
+            <input placeholder="Enter your name"></input>
             <Button text="Enter" onClick={buttonAction}></Button>
         </article>
     )

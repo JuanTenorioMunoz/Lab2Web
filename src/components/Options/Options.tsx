@@ -22,13 +22,19 @@ const Options = ({ options, page, selectAnswer }: optionsProps) => {
     const question = options[page].question;
 
     const handleOptionClick = (option: optionProps, index: number) => {
-        setSelect(index);
         switch (option.type) {
-            case 'toggle':
-                console.log("Text option selected:", option.text);
+            case 'normal':
+                setSelect(null);
+                setSelect(index);
+                console.log("selectedIndex" + selection)
                 break;
+
+            case 'toggle':
+                setSelect(index);
+                break;
+
             default:
-                console.log("Unknown option type:", option.type);
+                console.log("what type is this?", option.type);
         }
         selectAnswer(option);
     };

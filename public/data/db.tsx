@@ -1,32 +1,62 @@
 export const optionsInfo = {
     "1": {
-        question: "wachudoin",
+        question: "Who would win if they fought in a movie?",
         options: [
             {
-                text: "Antoine",
+                text: "John Wick",
                 image: "yerywefweerb",
-                type: "toggle",
+                type: "normal",
             },
             {
-                text: "Joh",
+                text: "James bond",
                 image: "eberberber",
                 type: "normal",
             }
         ]
     },
     "2": {
-        question: "nah32",
+        question: "¿What genres do you like?",
         options: [
             {
-                text: "Antoin2e",
+                text: "Horror",
                 image: "yerywefweerb",
-                type: "toggle",
+                type: "normal",
             },
             {
-                text: "Joh2",
+                text: "Sci-Fi",
                 image: "eberberber",
-                type: "toggle"
+                type: "normal"
+            },
+            {
+                text: "Crime",
+                image: "eberberber",
+                type: "normal"
+            },
+            {
+                text: "Romance",
+                image: "eberberber",
+                type: "normal"
             }
+        ]
+    },
+    "3": {
+        question: "¿What genres do you like?",
+        options: [
+            {
+                text: "Horror",
+                image: "yerywefweerb",
+                type: "normal",
+            },
+        ]
+    },
+    "4": {
+        question: "¿What genres do yewrwerou like?",
+        options: [
+            {
+                text: "Horror",
+                image: "yerywefweerb",
+                type: "normal",
+            },
         ]
     }
 };

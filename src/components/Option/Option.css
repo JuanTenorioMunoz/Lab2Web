@@ -1,6 +1,6 @@
 .optionContainer{
     display: flex;
-    background-color: grey;
+    background-color: rgb(236, 236, 236);
     border-radius: 10px;
-    width: 20%;
+    width: 50vw;
 }
