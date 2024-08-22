@@ -5,6 +5,7 @@ interface optionProps {
     image: string;
     isSelected: boolean;
     onClick: () => void;
+    type: string;
 }
 
 const Option = ({text, image, onClick, isSelected}:optionProps) => {

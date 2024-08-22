@@ -7,9 +7,11 @@ export type optionsProps = {
         [key: string]: { 
             text: string; 
             options: optionProps[]; 
+            question: string;
         } 
     };
     page: number;
+    type: toggle;
 };
 
 const Options = ({ options, page }: optionsProps) => {
@@ -17,9 +19,11 @@ const Options = ({ options, page }: optionsProps) => {
     const [selection, setSelect] = useState<number | null>(null);
     
     const currentPage = options[page].options;
+    const question = options[page].question
 
     return (
         <div className="optionsContainer">
+        <h1>{question}</h1>
             {currentPage.map((option, index) => (
                 <Option
                     key={index}

@@ -1,6 +1,6 @@
 import "./Button.css"
 
-type ButtonProps = {
+export type ButtonProps = {
     text: string;
     onClick?: () => void; 
 }
